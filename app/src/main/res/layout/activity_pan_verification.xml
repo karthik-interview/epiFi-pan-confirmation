@@ -93,6 +93,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/pan_bottom_elements_inter_spacing"
             android:text="@string/form_info"
+            android:textColorLink="?colorPrimary"
             app:layout_constraintBottom_toTopOf="@id/next_btn"
             app:layout_constraintEnd_toEndOf="@id/guideline_end"
             app:layout_constraintStart_toStartOf="@id/guideline_start" />

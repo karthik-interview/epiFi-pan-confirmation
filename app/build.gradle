@@ -47,6 +47,7 @@ dependencies {
     implementation Libs.AndroidX.constraintLayout
 
     implementation Libs.inputMask
+    implementation Libs.linkMovementMethod
 
     testImplementation Libs.junit
     androidTestImplementation Libs.AndroidX.Test.junit

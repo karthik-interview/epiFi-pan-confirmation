@@ -6,6 +6,7 @@ import dev.thedukerchip.epifipan.databinding.ActivityPanVerificationBinding
 import dev.thedukerchip.epifipan.ui.extensions.hideKeyboard
 import dev.thedukerchip.epifipan.ui.extensions.setContentView
 import dev.thedukerchip.epifipan.ui.validation.setupMaskedInput
+import dev.thedukerchip.epifipan.ui.extensions.setupClickableLinks
 
 class PanVerificationActivity : AppCompatActivity() {
 
@@ -20,6 +21,8 @@ class PanVerificationActivity : AppCompatActivity() {
     }
 
     private fun initViews() {
+        binding.formInfoTv.setupClickableLinks()
+
         binding.panEdt.setupMaskedInput("[AAAAA0000A]") {
             binding.dayEdt.requestFocus()
         }
