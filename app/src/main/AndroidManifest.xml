@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EpiFiPan">
         <activity
-            android:name=".ui.pan.PanConfirmationActivity"
+            android:name=".ui.pan.PanVerificationActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">

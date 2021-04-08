@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.pan.PanVerificationActivity">
+
+        <Space
+            android:id="@+id/top_space"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/screen_spacing_top"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/app_logo_imv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/top_space"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/instruction_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pan_instruction_marginTop"
+            android:text="@string/instruction_pan_verification"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/app_logo_imv" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pan_edt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pan_form_marginTop"
+            android:hint="@string/hint_pan"
+            android:inputType="textCapCharacters"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/instruction_tv" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/day_edt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_day"
+            android:inputType="number"
+            android:maxLength="@integer/day_input_max_length"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/pan_edt"
+            app:layout_constraintWidth_percent=".2" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/month_edt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/pan_input_inter_spacing"
+            android:hint="@string/hint_month"
+            android:inputType="number"
+            android:maxLength="@integer/month_input_max_length"
+            app:layout_constraintStart_toEndOf="@id/day_edt"
+            app:layout_constraintTop_toBottomOf="@id/pan_edt"
+            app:layout_constraintWidth_percent=".2" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/pan_input_inter_spacing"
+            android:hint="@string/hint_year"
+            android:inputType="number"
+            android:maxLength="@integer/year_input_max_length"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintStart_toEndOf="@id/month_edt"
+            app:layout_constraintTop_toBottomOf="@id/pan_edt" />
+
+        <TextView
+            android:id="@+id/form_info_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/pan_bottom_elements_inter_spacing"
+            android:text="@string/form_info"
+            app:layout_constraintBottom_toTopOf="@id/next_btn"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_start" />
+
+        <Button
+            android:id="@+id/next_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/pan_bottom_elements_inter_spacing"
+            android:text="@string/action_next"
+            app:layout_constraintBottom_toTopOf="@id/no_pan_btn"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_start" />
+
+        <Button
+            android:id="@+id/no_pan_btn"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/action_no_pan"
+            app:layout_constraintBottom_toTopOf="@id/space_bottom"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_start" />
+
+        <Space
+            android:id="@+id/space_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/screen_spacing_bottom"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/screen_spacing_start" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/screen_spacing_end" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

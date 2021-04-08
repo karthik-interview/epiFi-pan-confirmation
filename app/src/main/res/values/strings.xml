@@ -8,7 +8,7 @@
     <string name="input_title_birthdate">birthdate</string>
 
     // TODO Update the hint with the format
-    <string name="hint_pan"></string>
+    <string name="hint_pan">PAN</string>
     <string name="hint_day">DD</string>
     <string name="hint_month">MM</string>
     <string name="hint_year">YYYY</string>
