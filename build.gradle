@@ -1,0 +1,16 @@
+buildscript {
+    apply from: rootProject.file('libraries.gradle')
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath Libs.androidGradlePlugin
+        classpath Libs.Kotlin.gradlePlugin
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
