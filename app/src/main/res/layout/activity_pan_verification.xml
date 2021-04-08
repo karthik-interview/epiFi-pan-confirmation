@@ -54,6 +54,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:hint="@string/hint_day"
+            android:imeOptions="actionNext"
             android:inputType="number"
             android:maxLength="@integer/day_input_max_length"
             app:layout_constraintStart_toStartOf="@id/guideline_start"
@@ -66,6 +67,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/pan_input_inter_spacing"
             android:hint="@string/hint_month"
+            android:imeOptions="actionNext"
             android:inputType="number"
             android:maxLength="@integer/month_input_max_length"
             app:layout_constraintStart_toEndOf="@id/day_edt"
@@ -73,10 +75,12 @@
             app:layout_constraintWidth_percent=".2" />
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/year_edt"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/pan_input_inter_spacing"
             android:hint="@string/hint_year"
+            android:imeOptions="actionDone"
             android:inputType="number"
             android:maxLength="@integer/year_input_max_length"
             app:layout_constraintEnd_toEndOf="@id/guideline_end"

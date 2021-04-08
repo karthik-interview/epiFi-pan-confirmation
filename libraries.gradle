@@ -20,6 +20,8 @@ libs.AndroidX = [
         constraintLayout: "androidx.constraintlayout:constraintlayout:2.0.4",
 ]
 
+libs.inputMask = "com.redmadrobot:input-mask-android:6.0.0"
+
 libs.junit = "junit:junit:4.13.2"
 libs.AndroidX.Test = [
         junit: "androidx.test.ext:junit:1.1.2",

@@ -46,6 +46,8 @@ dependencies {
     implementation Libs.material
     implementation Libs.AndroidX.constraintLayout
 
+    implementation Libs.inputMask
+
     testImplementation Libs.junit
     androidTestImplementation Libs.AndroidX.Test.junit
     androidTestImplementation Libs.AndroidX.Test.espresso
