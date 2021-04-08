@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">PAN</string>
+
+    // PAN Confirmation
+    <string name="instruction_pan_verification">First of the few steps to set you up with a Bank Account</string>
+
+    <string name="input_title_pan">pan number</string>
+    <string name="input_title_birthdate">birthdate</string>
+
+    // TODO Update the hint with the format
+    <string name="hint_pan"></string>
+    <string name="hint_day">DD</string>
+    <string name="hint_month">MM</string>
+    <string name="hint_year">YYYY</string>
+
+    <string name="action_next">Next</string>
+    <string name="action_no_pan">I don\'t have a PAN</string>
+
+    // TODO Learn more hyperlink https://epifi.com/
+    <string name="form_info">
+        Providing PAN &amp; Date of Birth helps us find and
+        fetch your KYC from a central registry by the Government of India.
+        Learn more
+    </string>
+
 </resources>
