@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id "dagger.hilt.android.plugin"
 }
 
 android {
@@ -50,6 +51,12 @@ dependencies {
 
     implementation Libs.inputMask
     implementation Libs.linkMovementMethod
+
+    implementation Libs.AndroidX.Hilt.work
+    kapt Libs.AndroidX.Hilt.compiler
+
+    implementation Libs.Hilt.library
+    kapt Libs.Hilt.compiler
 
     testImplementation Libs.junit
     androidTestImplementation Libs.AndroidX.Test.junit

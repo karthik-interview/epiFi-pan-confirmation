@@ -1,15 +1,22 @@
 package dev.thedukerchip.epifipan.viewmodel.pan
 
+import android.content.res.Resources
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import dev.thedukerchip.epifipan.R
 import dev.thedukerchip.epifipan.ui.pan.PanVerificationEvent
 import dev.thedukerchip.epifipan.ui.pan.PanVerificationForm
 import dev.thedukerchip.epifipan.ui.pan.PanVerificationState
 import dev.thedukerchip.epifipan.ui.validation.FieldValidator
 import dev.thedukerchip.epifipan.ui.validation.FormResolver
+import javax.inject.Inject
 
-class PanVerificationViewModel : ViewModel() {
+@HiltViewModel
+class PanVerificationViewModel @Inject constructor(
+    resources: Resources
+) : ViewModel() {
 
     private val _uiState = MutableLiveData<PanVerificationState>()
     val uiState: LiveData<PanVerificationState>
@@ -19,7 +26,7 @@ class PanVerificationViewModel : ViewModel() {
 
     // TODO Add all the validation rules
     private val panValidator = FieldValidator(valueResolver = form::pan)
-        .addRule("PAN cannot be empty") { it.isNotEmpty() }
+        .addRule(resources.getString(R.string.error_empty_pan)) { it.isNotEmpty() }
 
     // TODO Add validators for birthdate fields
     private val formValidationResolver: FormResolver = FormResolver(listOf(panValidator))

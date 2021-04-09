@@ -4,15 +4,16 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import dagger.hilt.android.AndroidEntryPoint
 import dev.thedukerchip.epifipan.R
 import dev.thedukerchip.epifipan.databinding.ActivityPanVerificationBinding
 import dev.thedukerchip.epifipan.ui.extensions.hideKeyboard
 import dev.thedukerchip.epifipan.ui.extensions.setContentView
 import dev.thedukerchip.epifipan.ui.extensions.setupClickableLinks
-import dev.thedukerchip.epifipan.ui.validation.MaskedTextListener
 import dev.thedukerchip.epifipan.ui.validation.setupMaskedInput
 import dev.thedukerchip.epifipan.viewmodel.pan.PanVerificationViewModel
 
+@AndroidEntryPoint
 class PanVerificationActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityPanVerificationBinding

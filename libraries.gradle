@@ -23,6 +23,20 @@ libs.AndroidX = [
 libs.inputMask = "com.redmadrobot:input-mask-android:6.0.0"
 libs.linkMovementMethod = "me.saket:better-link-movement-method:2.2.0"
 
+versions.androidxhilt = "1.0.0-alpha03"
+libs.AndroidX.Hilt = [
+        work: "androidx.hilt:hilt-work:$versions.androidxhilt",
+        compiler: "androidx.hilt:hilt-compiler:$versions.androidxhilt",
+]
+
+versions.hilt = "2.33-beta"
+libs.Hilt = [
+        library: "com.google.dagger:hilt-android:$versions.hilt",
+        compiler: "com.google.dagger:hilt-compiler:$versions.hilt",
+        gradlePlugin: "com.google.dagger:hilt-android-gradle-plugin:$versions.hilt",
+
+]
+
 libs.junit = "junit:junit:4.13.2"
 libs.AndroidX.Test = [
         junit: "androidx.test.ext:junit:1.1.2",

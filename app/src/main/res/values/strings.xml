@@ -7,7 +7,6 @@
     <string name="input_title_pan">pan number</string>
     <string name="input_title_birthdate">birthdate</string>
 
-    // TODO Update the hint with the format
     <string name="hint_pan">AAAAA0000A</string>
     <string name="hint_day">DD</string>
     <string name="hint_month">MM</string>
@@ -18,4 +17,7 @@
 
     <string name="form_info">Providing PAN &amp; Date of Birth helps us find and fetch your KYC from a central registry by the Government of India. <a href="https://epifi.com/">Learn more</a></string>
 
+    <string name="error_empty_pan">PAN cannot be empty</string>
+    <string name="error_invalid_pan">Enter valid PAN</string>
+    <string name="error_invalid_birthdate">Enter valid birthdate</string>
 </resources>
