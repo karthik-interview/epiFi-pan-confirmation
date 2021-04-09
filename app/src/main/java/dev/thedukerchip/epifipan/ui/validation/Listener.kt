@@ -3,6 +3,7 @@ package dev.thedukerchip.epifipan.ui.validation
 import android.widget.EditText
 import com.redmadrobot.inputmask.MaskedTextChangedListener
 
+typealias MaskedTextListener = (maskFilled: Boolean, extractedValue: String, formattedValue: String) -> Unit
 typealias MaskFilledListener = () -> Unit
 
 fun MaskedTextChangedListener.setMaskFilledListener(maskFilledListener: MaskFilledListener): MaskedTextChangedListener {
@@ -20,16 +21,28 @@ fun MaskedTextChangedListener.setMaskFilledListener(maskFilledListener: MaskFill
     return this
 }
 
+fun MaskedTextChangedListener.setMaskChangedListener(maskedTextListener: MaskedTextListener): MaskedTextChangedListener {
+    valueListener = object : MaskedTextChangedListener.ValueListener {
+        override fun onTextChanged(
+            maskFilled: Boolean,
+            extractedValue: String,
+            formattedValue: String,
+        ) {
+            maskedTextListener(maskFilled, extractedValue, formattedValue)
+        }
+    }
+    return this
+}
+
 fun EditText.setupMaskedInput(
     format: String,
-    maskFilledListener: MaskFilledListener? = null
+    maskedTextListener: MaskedTextListener? = null
 ): MaskedTextChangedListener {
     val listener = MaskedTextChangedListener
         .installOn(this, format)
 
-    if (maskFilledListener != null) {
-        // TODO Unable to edit the value once mask is filled
-        listener.setMaskFilledListener(maskFilledListener)
+    if (maskedTextListener != null) {
+        listener.setMaskChangedListener(maskedTextListener)
     }
 
     return listener
