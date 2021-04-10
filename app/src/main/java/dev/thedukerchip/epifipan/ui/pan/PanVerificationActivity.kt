@@ -54,7 +54,6 @@ class PanVerificationActivity : AppCompatActivity() {
     }
 
     private fun setupForm() {
-        // TODO Unable to edit the value once mask is filled - For all edt
         binding.panEdt.setupMaskedInput("[AAAAA0000A]") { maskFilled, _, _ ->
             if (maskFilled) {
                 binding.dateEdt.requestFocus()
