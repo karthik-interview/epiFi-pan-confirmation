@@ -7,7 +7,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 private const val BIRTHDATE_FORMAT = "ddMMyyyy"
-private const val PAN_FORMAT = "[A-Z]{5}[0-9]{4}[A-Z]{1}"
+private const val PAN_FORMAT = "[A-Z]{5}[0-9]{4}[A-Z]"
 
 @SuppressLint("SimpleDateFormat")
 private fun getDateFormat(): SimpleDateFormat {

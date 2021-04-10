@@ -4,9 +4,6 @@
     // PAN Confirmation
     <string name="instruction_pan_verification">First of the few steps to set you up with a Bank Account</string>
 
-    <string name="input_title_pan">pan number</string>
-    <string name="input_title_birthdate">birthdate</string>
-
     <string name="hint_pan">AAAAA0000A</string>
     <string name="hint_day">DD</string>
     <string name="hint_month">MM</string>
