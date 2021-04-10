@@ -28,7 +28,7 @@ class PanVerificationActivity : AppCompatActivity() {
                 }
             }
             is PanVerificationState.InValidForm -> setFormError(state.error)
-            is PanVerificationState.CloseApp -> finishAffinity()
+            is PanVerificationState.CloseApp -> finishAndRemoveTask()
         }
     }
 
