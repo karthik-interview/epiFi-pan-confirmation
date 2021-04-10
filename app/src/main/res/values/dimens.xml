@@ -11,4 +11,6 @@
     <dimen name="pan_bottom_elements_inter_spacing">12dp</dimen>
     <dimen name="pan_instruction_marginTop">32dp</dimen>
     <dimen name="pan_form_marginTop">16dp</dimen>
+    <dimen name="pan_form_inter_spacing">8dp</dimen>
+    <dimen name="pan_form_label_spacing">6dp</dimen>
 </resources>

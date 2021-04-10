@@ -12,6 +12,9 @@
     <string name="hint_month">MM</string>
     <string name="hint_year">YYYY</string>
 
+    <string name="label_pan">PAN</string>
+    <string name="label_birthdate">Birthdate</string>
+
     <string name="action_next">Next</string>
     <string name="action_no_pan">I don\'t have a PAN</string>
 

@@ -41,58 +41,124 @@
             app:layout_constraintStart_toStartOf="@id/guideline_start"
             app:layout_constraintTop_toBottomOf="@id/app_logo_imv" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/pan_edt"
+        <TextView
+            android:id="@+id/pan_label_tv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/pan_form_marginTop"
-            android:hint="@string/hint_pan"
-            android:inputType="textCapCharacters"
-            android:text="@={form.pan}"
+            android:text="@string/label_pan"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
             app:layout_constraintEnd_toEndOf="@id/guideline_end"
             app:layout_constraintStart_toStartOf="@id/guideline_start"
             app:layout_constraintTop_toBottomOf="@id/instruction_tv" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/day_edt"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/hint_day"
-            android:imeOptions="actionNext"
-            android:inputType="number"
-            android:maxLength="@integer/day_input_max_length"
-            android:text="@={form.birthDate.day}"
-            app:layout_constraintStart_toStartOf="@id/guideline_start"
-            app:layout_constraintTop_toBottomOf="@id/pan_edt"
-            app:layout_constraintWidth_percent=".2" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/month_edt"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/pan_input_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/pan_input_inter_spacing"
-            android:hint="@string/hint_month"
-            android:imeOptions="actionNext"
-            android:inputType="number"
-            android:maxLength="@integer/month_input_max_length"
-            android:text="@={form.birthDate.month}"
-            app:layout_constraintStart_toEndOf="@id/day_edt"
-            app:layout_constraintTop_toBottomOf="@id/pan_edt"
-            app:layout_constraintWidth_percent=".2" />
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/year_edt"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/pan_input_inter_spacing"
-            android:hint="@string/hint_year"
-            android:imeOptions="actionDone"
-            android:inputType="number"
-            android:maxLength="@integer/year_input_max_length"
-            android:text="@={form.birthDate.year}"
+            android:layout_marginTop="@dimen/pan_form_label_spacing"
+            app:hintEnabled="false"
             app:layout_constraintEnd_toEndOf="@id/guideline_end"
-            app:layout_constraintStart_toEndOf="@id/month_edt"
-            app:layout_constraintTop_toBottomOf="@id/pan_edt" />
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/pan_label_tv">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pan_edt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_pan"
+                android:inputType="textCapCharacters"
+                android:text="@={form.pan}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Space
+            android:id="@+id/birthdate_guideline"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/pan_form_inter_spacing"
+            app:layout_constraintTop_toBottomOf="@id/pan_input_layout" />
+
+        <TextView
+            android:id="@+id/birthdate_label_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/label_birthdate"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/birthdate_guideline" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/date_input_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pan_form_label_spacing"
+            app:hintEnabled="false"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/birthdate_label_tv"
+            app:layout_constraintWidth_percent=".2">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/date_edt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_day"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLength="@integer/day_input_max_length"
+                android:text="@={form.birthDate.day}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/month_input_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/pan_input_inter_spacing"
+            app:hintEnabled="false"
+            app:layout_constraintStart_toEndOf="@id/date_input_layout"
+            app:layout_constraintTop_toTopOf="@id/date_input_layout"
+            app:layout_constraintWidth_percent=".2">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/month_edt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_month"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLength="@integer/month_input_max_length"
+                android:text="@={form.birthDate.month}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/year_input_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/pan_input_inter_spacing"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintStart_toEndOf="@id/month_input_layout"
+            app:layout_constraintTop_toTopOf="@id/date_input_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/year_edt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:hint="@string/hint_year"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:maxLength="@integer/year_input_max_length"
+                android:text="@={form.birthDate.year}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
 
         <TextView
             android:id="@+id/form_info_tv"

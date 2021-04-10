@@ -57,12 +57,12 @@ class PanVerificationActivity : AppCompatActivity() {
         // TODO Unable to edit the value once mask is filled - For all edt
         binding.panEdt.setupMaskedInput("[AAAAA0000A]") { maskFilled, _, _ ->
             if (maskFilled) {
-                binding.dayEdt.requestFocus()
+                binding.dateEdt.requestFocus()
             }
             viewModel.processEvents(PanVerificationEvent.ValueChanged)
         }
 
-        binding.dayEdt.setupMaskedInput("[00]") { maskFilled, _, _ ->
+        binding.dateEdt.setupMaskedInput("[00]") { maskFilled, _, _ ->
             if (maskFilled) {
                 binding.monthEdt.requestFocus()
             }
