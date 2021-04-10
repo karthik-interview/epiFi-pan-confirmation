@@ -6,3 +6,4 @@ compiler.xml
 gradle.xml
 misc.xml
 vcs.xml
+deploymentTargetDropDown.xml
