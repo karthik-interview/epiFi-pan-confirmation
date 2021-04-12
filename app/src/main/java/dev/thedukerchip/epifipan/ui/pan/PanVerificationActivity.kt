@@ -3,6 +3,7 @@ package dev.thedukerchip.epifipan.ui.pan
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isGone
 import androidx.lifecycle.Observer
 import dagger.hilt.android.AndroidEntryPoint
 import dev.thedukerchip.epifipan.R
@@ -12,6 +13,7 @@ import dev.thedukerchip.epifipan.ui.extensions.setContentView
 import dev.thedukerchip.epifipan.ui.extensions.setupClickableLinks
 import dev.thedukerchip.epifipan.ui.validation.setupMaskedInput
 import dev.thedukerchip.epifipan.viewmodel.pan.PanVerificationViewModel
+import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEvent
 
 @AndroidEntryPoint
 class PanVerificationActivity : AppCompatActivity() {
@@ -46,6 +48,7 @@ class PanVerificationActivity : AppCompatActivity() {
         observeUiStates()
         setupForm()
         setupUiEvents()
+        setupKeyBoardEvents()
     }
 
     private fun observeUiStates() {
@@ -99,6 +102,14 @@ class PanVerificationActivity : AppCompatActivity() {
         binding.nextBtn.apply {
             isEnabled = false
             text = error
+        }
+    }
+
+    private fun setupKeyBoardEvents() {
+        KeyboardVisibilityEvent.setEventListener(this) { isOpen ->
+            binding.formInfoTv.isGone = isOpen
+            binding.noPanBtn.isGone = isOpen
+            binding.spaceBottom.isGone = isOpen
         }
     }
 }

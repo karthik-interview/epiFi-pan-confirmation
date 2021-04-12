@@ -22,6 +22,7 @@ libs.AndroidX = [
 
 libs.inputMask = "com.redmadrobot:input-mask-android:6.0.0"
 libs.linkMovementMethod = "me.saket:better-link-movement-method:2.2.0"
+libs.keyboardVisibilityEvent = "net.yslibrary.keyboardvisibilityevent:keyboardvisibilityevent:2.3.0"
 
 versions.androidxhilt = "1.0.0-alpha03"
 libs.AndroidX.Hilt = [

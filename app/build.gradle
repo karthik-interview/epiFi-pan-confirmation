@@ -51,6 +51,7 @@ dependencies {
 
     implementation Libs.inputMask
     implementation Libs.linkMovementMethod
+    implementation Libs.keyboardVisibilityEvent
 
     implementation Libs.AndroidX.Hilt.work
     kapt Libs.AndroidX.Hilt.compiler
