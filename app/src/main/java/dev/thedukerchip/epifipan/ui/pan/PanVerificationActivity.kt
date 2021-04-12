@@ -106,6 +106,7 @@ class PanVerificationActivity : AppCompatActivity() {
     }
 
     private fun setupKeyBoardEvents() {
+        // TODO Make the elements state changes smoothly
         KeyboardVisibilityEvent.setEventListener(this) { isOpen ->
             binding.formInfoTv.isGone = isOpen
             binding.noPanBtn.isGone = isOpen
